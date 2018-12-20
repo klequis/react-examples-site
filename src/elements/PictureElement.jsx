@@ -2,7 +2,6 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
 import { breakpoints } from 'theme/breakpoints'
-import { green } from 'logger'
 
 class PictureElement extends React.Component { // make pure?
   componentDidMount() {
@@ -26,14 +25,10 @@ class PictureElement extends React.Component { // make pure?
       className: classNameProp,
       images
     } = this.props
-    // console.log(breakpoints)
-    // green('images', images)
     const clsNames = classNames([
       classes.fluid,
       classNameProp
     ])
-    green('classNameProp', classNameProp)
-    green('clsNames', clsNames)
     return (
       <div id='PictureElement-wrapper' className={classes.wrapper}>
         <picture>

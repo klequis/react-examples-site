@@ -2,7 +2,6 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
 import { breakpoints } from 'theme/breakpoints'
-import { green } from 'logger'
 
 class PictureElement extends React.Component { // make pure?
   componentDidMount() {
@@ -27,7 +26,6 @@ class PictureElement extends React.Component { // make pure?
       images
     } = this.props
     // console.log(breakpoints)
-    green('images', images)
     const clsNames = ([
       classes.fluid,
       classNameProp
@@ -55,9 +53,6 @@ class PictureElement extends React.Component { // make pure?
 
 const styles = theme => ({
   wrapper: {
-    // width: '100%',
-    // height: '100%',
-    // width: 300,
     backgroundColor: 'orange',
   },
   fluid: {
@@ -65,8 +60,6 @@ const styles = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '100%',
-    // height: '100%',
-
   },
 })
 

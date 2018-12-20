@@ -34,49 +34,6 @@ const styles = theme => ({
     flexFlow: 'column nowrap',
     justifyContent: 'space-between',
   },
-  '@global': {
-    html: {
-      boxSizing: 'border-box',
-      WebkitFontSmoothing: 'antialiased', // Antialiasing.
-      MozOsxFontSmoothing: 'grayscale', // Antialiasing.
-      fontSize: '12pt',
-      [theme.breakpoints.up('sm')]: {
-        fontSize: '13pt'
-      },
-      [theme.breakpoints.up('md')]: {
-        fontSize: '14pt'
-      },
-      [theme.breakpoints.up('lg')]: {
-        fontSize: '16pt'
-      },
-    },
-    body: {
-      margin: 0,
-      fontFamily: '"Source Sans Pro", Helvetica, sans-serif',
-      fontSize: '1rem',
-      fontWeight: 300,
-      lineHeight: 1.65,
-      webkitTextSizeAdjust: 'none',
-      msOverflowStyle: 'scrollbar',
-      '@media print': {
-       backgroundColor: 'white',
-        minWidth: 320,
-      },
-      letterSpacing: 0.3,
-    },
-    '*, *::before, *::after': {
-      boxSizing: 'inherit',
-    },
-    p: {
-      margin: 0,
-    },
-    'h1, h2, h3, h4, h5, h6': {
-      margin: 0,
-    },
-    h2: {
-      // margin: 0,
-    }
-  },
 
 })
 

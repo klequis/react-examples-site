@@ -1,8 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { compose } from 'recompose'
+import withTheme from 'theme/withTheme'
+import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
+import { green } from 'logger'
 
 const variants = [
   'h1',
@@ -12,7 +14,7 @@ const variants = [
   'subtitle1',
   'subtitle2',
   'subtitle3',
-  'body1'
+  'body'
 ]
 
 const variantMap = {
@@ -23,11 +25,16 @@ const variantMap = {
   subtitle1: 'p',
   subtitle2: 'p',
   subtitle3: 'p',
-  body1: 'p'
+  body: 'p'
 }
 
 const getElementForVarient = (variant) => {
   return variantMap[variant]
+}
+
+const getColorValue = (theme, color) => {
+  const c = theme.palette.textColors.find(c => c.name === color)
+  return c.value
 }
 
 const unknown = {
@@ -40,9 +47,9 @@ const Text = ({
   children,
   classes,
   className: classNameProp,
-  // marginBottom=true,
+  color='default',
   noMargin,
-  p,
+  body,
   h1,
   h2,
   h3,
@@ -60,21 +67,27 @@ const Text = ({
   if (h2) {variantFinal = 'h2'}
   if (h3) {variantFinal = 'h3'}
   if (h4) {variantFinal = 'h4'}
-  if (p) { variantFinal = 'body1'}
+  if (body) { variantFinal = 'body'}
   if (subtitle1) { variantFinal = 'subtitle1'}
   if (subtitle2) { variantFinal = 'subtitle2'}
   if (subtitle3) { variantFinal = 'subtitle3'}
+
+  const colorStyle = {
+    color: getColorValue(theme, color)
+  }
 
   const clsNames = classNames([
     classes.imgFluid,
     classNameProp,
     classes[variantFinal],
+
     {
       [classes.marginBottom]: !noMargin,
       [classes.left]: align === 'left',
       [classes.center]: align === 'center',
-      [classes.noMargin]: noMargin
+      [classes.noMargin]: noMargin,
     },
+
   ])
   const Component = getElementForVarient(variantFinal)
 
@@ -82,9 +95,12 @@ const Text = ({
     return <p style={unknown}>you must specify a variant</p>
   }
 
+  green('theme', theme)
+
   return (
     <Component
       className={clsNames}
+      style={colorStyle}
     >
       {children}
     </Component>
@@ -93,8 +109,8 @@ const Text = ({
 
 const styles = theme => {
 
-  const xs = theme.typography.headings.xs
-  const md = theme.typography.headings.md
+  const xs = theme.typography.xs
+  const md = theme.typography.md
 
   return ({
     marginBottom: {
@@ -107,6 +123,7 @@ const styles = theme => {
     subtitle1: xs.subtitle1,
     subtitle2: xs.subtitle2,
     subtitle3: xs.subtitle3,
+    body: xs.body,
     [theme.breakpoints.up('md')]: {
       h1: md.h1,
       h2: md.h2,
@@ -115,6 +132,7 @@ const styles = theme => {
       subtitle1: md.subtitle1,
       subtitle2: md.subtitle2,
       subtitle3: md.subtitle3,
+      body: md.body,
     },
     noMargin: {
       margin: 0,
@@ -129,6 +147,7 @@ const styles = theme => {
 }
 
 export default compose(
+  withTheme,
   injectSheet(styles)
 )(Text)
 
@@ -141,6 +160,6 @@ Text.propTypes = {
     'subtitle1',
     'subtitle2',
     'subtitle3',
-    'body1'
+    'body'
   ]),
 }
