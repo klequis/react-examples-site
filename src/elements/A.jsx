@@ -2,7 +2,6 @@ import React from 'react'
 import { compose } from 'recompose'
 import withTheme from 'theme/withTheme'
 import injectSheet from 'react-jss'
-import { green } from 'logger'
 
 const getColorValue = (theme, color) => {
   const c = theme.palette.textColors.find(c => c.name === color)
@@ -13,7 +12,6 @@ const A = ({ children, classes, color='default', href, theme}) => {
   const colorStyle = {
     color: getColorValue(theme, color)
   }
-  green('style', colorStyle)
   return (
     <a
       href={href}

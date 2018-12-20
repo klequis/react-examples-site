@@ -4,7 +4,6 @@ import withTheme from 'theme/withTheme'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
-import { green } from 'logger'
 
 const variants = [
   'h1',
@@ -95,7 +94,6 @@ const Text = ({
     return <p style={unknown}>you must specify a variant</p>
   }
 
-  green('theme', theme)
 
   return (
     <Component

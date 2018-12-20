@@ -5,19 +5,27 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import configureStore from './redux/configureStore'
+const store = configureStore()
 
 // Save a reference to the root element for reuse
 const rootEl = document.getElementById('root')
 
 // Create a reusable render method that we can call more than once
 let render = () => {
-    // Dynamically import our main App component, and render it
-    const Wrapper = require('./Wrapper').default
+  // Dynamically import our main App component, and render it
+  const Wrapper = require('./Wrapper').default
 
-    ReactDOM.render(
-      <Wrapper />,
-      rootEl
-    )
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router>
+        <Wrapper />
+      </Router>
+    </Provider>,
+    rootEl
+  )
 }
 
 if(module.hot) {

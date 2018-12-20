@@ -9,22 +9,6 @@ import classNames from 'classnames'
   - ????? variant(string): section (default), header, footer
 */
 
-const variants = [
-  'footer',
-  'header',
-  'section',
-]
-
-const variantMap = {
-  footer: 'footer',
-  header: 'header',
-  section: 'section',
-}
-
-const getElementForVarient = (variant) => {
-  return variantMap[variant]
-}
-
 const Section = (props) => {
 
   const {
@@ -63,8 +47,6 @@ const Section = (props) => {
 
   )
   const Component = variant
-  console.log('component', Component)
-
   return (
     <Component className={clsNames}>
       <div className={classes.inner}>

@@ -4,9 +4,6 @@
 // Sorted ASC by size. That's important.
 // It can't be configured as it's used statically for propTypes.
 import { breakpointValues, breakpointKeys, getValueForKey } from './breakpoints'
-import { pink } from 'logger'
-
-
 
 // Keep in mind that @media is inclusive by the CSS specification.
 export default function createBreakpoints(breakpoints) {

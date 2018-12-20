@@ -1,9 +1,11 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+import { Link } from 'react-router-dom'
 import Text from 'elements/Text'
 import A from 'elements/A'
-import Tag from './Tag'
-import iTag from './media/tag.svg'
+import { hasProp } from 'lib/hasProp'
+import Tags from './Tags'
+
 
 const Example = (props) => {
   const {
@@ -11,28 +13,28 @@ const Example = (props) => {
     example,
   } = props
 
-  const tags = example.tags.map((value, index, arr) => {
-    const len = arr.length
 
-    return (
-      <Tag>{value}{index+1 < len ? ',' : '' }</Tag>
-    )
-  })
+  const hasPath = hasProp('path', example)
 
   return (
     <div className={classes.wrapper}>
       <Text h3 color='black' noMargin className={classes.title}>
-        <A
-          href={example.gitHubUrl}
-          color='blue'
-        >
-          {example.title}
-        </A>
+        {
+          hasPath
+            ? <Link to={example.path}>{example.title}</Link>
+            : <A
+                href={example.gitHubUrl}
+                color='blue'
+              >
+                {example.title}
+              </A>
+        }
+
       </Text>
       <Text body color='black'>{example.description}</Text>
-      <div className={classes.tags}>
-        <img src={iTag} className={classes.iTag} alt='tag icon' />{tags}
-      </div>
+      <Tags
+        example={example}
+      />
     </div>
   )
 }
@@ -47,15 +49,7 @@ const styles = theme => ({
     marginBottom: 16,
     textAlign: 'left',
   },
-  tags: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: '1.5rem',
-  },
-  iTag: {
-    maxHeight: 20,
-    marginRight: '0.75rem'
-  }
+
 })
 
 export default injectSheet(styles)(Example)
