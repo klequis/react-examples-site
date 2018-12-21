@@ -8,7 +8,7 @@ const getColorValue = (theme, color) => {
   return c.value
 }
 
-const A = ({ children, classes, color='default', href, theme}) => {
+const A = ({ children, classes, color='default', href, theme, ...rest}) => {
   const colorStyle = {
     color: getColorValue(theme, color)
   }
@@ -17,6 +17,7 @@ const A = ({ children, classes, color='default', href, theme}) => {
       href={href}
       className={classes.anchor}
       style={colorStyle}
+      {...rest}
     >
       {children}
     </a>

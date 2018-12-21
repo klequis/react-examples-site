@@ -15,16 +15,18 @@ const Example = (props) => {
 
 
   const hasPath = hasProp('path', example)
-
+// <Link to={example.path}>{example.title}</Link>
   return (
     <div className={classes.wrapper}>
       <Text h3 color='black' noMargin className={classes.title}>
         {
           hasPath
-            ? <Link to={example.path}>{example.title}</Link>
+            ? <Link to={`${example.path}/${example.id}`}>{example.title}</Link>
+
             : <A
                 href={example.gitHubUrl}
                 color='blue'
+                target='_blank'
               >
                 {example.title}
               </A>

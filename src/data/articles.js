@@ -1,5 +1,6 @@
 /*
     An 'article' can be a componet within this app or an external github repository
+    Articles with type='repo' get their id assigned when the app loads
 */
 import Introduction from 'posts/Introduction'
 
@@ -27,7 +28,7 @@ export const articles = [
     description: 'If you are unfamiliar with JSS, React-JSS and/or ThemeProvider, this will be a good read.',
     path: '/introduction',
     subtitle: 'Understanding and using the example projects',
-    title: 'Introduction',
+    title: 'Introduction to React Examples',
   },
 ]
 
