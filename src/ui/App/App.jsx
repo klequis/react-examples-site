@@ -3,9 +3,6 @@ import injectSheet from 'react-jss'
 import { Route } from 'react-router-dom'
 import Header from 'ui/Header'
 import Footer from 'ui/Footer'
-import Credits from 'elements/Credits'
-import A from 'elements/A'
-import { green } from 'logger'
 import Section from 'elements/Section'
 import Examples from 'ui/Examples'
 
@@ -22,7 +19,6 @@ class App extends React.Component {
             {
               articles.map((post) => {
                 // const Component = getComponent(post.id)
-                green('post', post)
                 return (
                   <Route
                     key={post.id}
@@ -56,9 +52,12 @@ const styles = theme => ({
     justifyContent: 'space-between',
   },
   section: {
+    // backgroundColor: 'green',
     height: '100%',
     flexGrow: 1,
     minHeight: 500,
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
   },
   main: {
     height: '100%',

@@ -103,6 +103,10 @@ const theme = {
       body: {
         fontFamily: bodyFontFamily,
       },
+      caption: {
+        fontFamily: bodyFontFamily,
+        fontSize: '0.75rem'
+      },
       tag: {
         fontFamily: bodyFontFamily,
         fontSize: '0.75rem',
@@ -181,6 +185,10 @@ const theme = {
     md: {
       body: {
         fontFamily: bodyFontFamily,
+      },
+      caption: {
+        fontFamily: bodyFontFamily,
+        fontSize: '0.75rem'
       },
       tag: {
         fontFamily: bodyFontFamily,

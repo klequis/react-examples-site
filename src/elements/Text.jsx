@@ -6,6 +6,8 @@ import injectSheet from 'react-jss'
 import classNames from 'classnames'
 
 const variants = [
+  'body',
+  'caption',
   'h1',
   'h2',
   'h3',
@@ -13,10 +15,11 @@ const variants = [
   'subtitle1',
   'subtitle2',
   'subtitle3',
-  'body'
 ]
 
 const variantMap = {
+  body: 'p',
+  caption: 'p',
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -24,7 +27,6 @@ const variantMap = {
   subtitle1: 'p',
   subtitle2: 'p',
   subtitle3: 'p',
-  body: 'p'
 }
 
 const getElementForVarient = (variant) => {
@@ -48,6 +50,7 @@ const Text = ({
   className: classNameProp,
   color='default',
   noMargin,
+  caption,
   body,
   h1,
   h2,
@@ -67,6 +70,7 @@ const Text = ({
   if (h3) {variantFinal = 'h3'}
   if (h4) {variantFinal = 'h4'}
   if (body) { variantFinal = 'body'}
+  if (caption) { variantFinal = 'caption'}
   if (subtitle1) { variantFinal = 'subtitle1'}
   if (subtitle2) { variantFinal = 'subtitle2'}
   if (subtitle3) { variantFinal = 'subtitle3'}
@@ -122,6 +126,7 @@ const styles = theme => {
     subtitle2: xs.subtitle2,
     subtitle3: xs.subtitle3,
     body: xs.body,
+    caption: xs.caption,
     [theme.breakpoints.up('md')]: {
       h1: md.h1,
       h2: md.h2,
@@ -131,6 +136,7 @@ const styles = theme => {
       subtitle2: md.subtitle2,
       subtitle3: md.subtitle3,
       body: md.body,
+      caption: md.caption,
     },
     noMargin: {
       margin: 0,

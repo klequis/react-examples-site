@@ -6,7 +6,18 @@ import Introduction from 'posts/Introduction'
 
 export const articles = [
   {
-    date: '19-Dec-18',
+    id: 'a8190a29-64f1-4939-b2eb-80e117af2afd',
+    date: '17-Dec-2018',
+    type: 'component',
+    component: Introduction,
+    description: 'A quick introduction to React examples.',
+    path: '/introduction',
+    pinned: 1,
+    subtitle: 'Understanding and using the example projects',
+    title: 'Introduction to React Examples',
+  },
+  {
+    date: '19-Dec-2018',
     type: 'repo',
     description: 'A React button component with Material Design-like ripple effect using React JSS',
     gitHubUrl: 'https://github.com/klequis/ripple-button-ex',
@@ -21,14 +32,14 @@ export const articles = [
     tags: ['JavaScript', 'Syntax'],
     title: 'Introduction to Arrow Functions',
   },
+  // https://github.com/klequis/react-flexbox-ex
+  //
   {
-    id: 'a8190a29-64f1-4939-b2eb-80e117af2afd',
-    type: 'component',
-    component: Introduction,
-    description: 'If you are unfamiliar with JSS, React-JSS and/or ThemeProvider, this will be a good read.',
-    path: '/introduction',
-    subtitle: 'Understanding and using the example projects',
-    title: 'Introduction to React Examples',
+    date: '22-Dec-2018',
+    type: 'repo',
+    description: 'Flexbox properties demonstrated in a React app with Material UI.',
+    gitHubUrl: 'https://github.com/klequis/react-flexbox-ex',
+    tags: ['React', 'Flexbox', 'Material UI'],
+    title: 'Using Flexbox with React & Material UI',
   },
 ]
-

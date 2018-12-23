@@ -14,7 +14,7 @@ const Section = (props) => {
   const {
     children,
     classes,
-    className,
+    className: classNameProp,
     background='white',
     noPadding,
     header,
@@ -42,7 +42,7 @@ const Section = (props) => {
     },
     [
 
-      className,
+      classNameProp,
     ]
 
   )
