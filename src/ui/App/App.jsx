@@ -19,6 +19,8 @@ class App extends React.Component {
             {
               articles.map((post) => {
                 // const Component = getComponent(post.id)
+                console.log('post', post.path)
+
                 return (
                   <Route
                     key={post.id}

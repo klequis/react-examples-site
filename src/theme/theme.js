@@ -9,6 +9,10 @@ const theme = {
   anchor: {
     textDecorationLine: 'solid',
     color: 'white',
+    // '&:visited': {
+    //   color: 'white',
+    // },
+
   },
   palette: {
     action: {
@@ -47,7 +51,8 @@ const theme = {
   section: {
     darkGrey: {
       color: '#fff',
-      backgroundColor: '#282c34',
+      // backgroundColor: '#282c34',
+      backgroundColor: '#303030',
     },
     blue: {
       color: '#fff',
@@ -78,27 +83,12 @@ const theme = {
       paddingBottom: '4rem',
     },
     md: {
-      // boxShadow: 'inset 0 1px 0 0 rgba(0, 0, 0, 0.5)',
       paddingTop: '4rem',
       paddingBottom: '4rem',
-      // backgroundColor: 'red',
     }
 
   },
   typography: {
-    color: {
-      dark: '#000000',
-      light: '#ffffff',
-    },
-    common: {
-      fontFamily: bodyFontFamily,
-      fontSize: '4.0rem',
-      // fontSize: '4.4rem',
-      lineHeight: 1.2,
-      fontWeight: 300,
-      textAlign: 'center',
-      margin: '0 0 20px 0',
-    },
     xs: {
       body: {
         fontFamily: bodyFontFamily,

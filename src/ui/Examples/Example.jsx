@@ -23,7 +23,7 @@ const Example = (props) => {
       <Text h3 color='black' noMargin className={classes.title}>
         {
           hasPath
-            ? <Link to={`${example.path}/${example.id}`}>{example.title}</Link>
+            ? <Link to={`${example.path}/${example.id}`} className={classes.routerLink}>{example.title}</Link>
 
             : <A
                 href={example.gitHubUrl}
@@ -35,11 +35,11 @@ const Example = (props) => {
         }
       </Text>
       <div className={classes.dateAndIcons}>
-        <Text caption color='black'>{example.date}</Text>
+        {/* <Text caption color='black'>{example.date}</Text>
         <div>
           {hasArticle ? <img src={iArticle} className={classes.iArticle} title='Has article' alt='article' /> : null}
           {hasRepo ? <img src={iGitHub} className={classes.iGitHub} title='Has repo' alt='git hub logo' /> : null}
-        </div>
+        </div> */}
       </div>
       <Text body color='black'>{example.description}</Text>
       <Tags
@@ -50,6 +50,9 @@ const Example = (props) => {
 }
 
 const styles = theme => ({
+  routerLink: {
+    color: '#005ca8',
+  },
   wrapper: {
     backgroundColor: '#fff',
     padding: '1rem',

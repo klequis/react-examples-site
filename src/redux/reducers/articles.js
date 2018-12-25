@@ -38,8 +38,10 @@ const getUnpinnedArticles = (data) => {
 // adds ids to examples
 const createExampleData = () => {
   const r = addIds()
+
   const pinned = getPinnedArticles(r)
   const unpinned = getUnpinnedArticles(r)
+  console.log('r', unpinned)
   return concat(pinned, unpinned)
 
 }

@@ -29,6 +29,7 @@ const Introduction = (props) => {
         <li>/ui - unique components</li>
         <li>/Wrapper.jsx - a component that adds global styles to the project.</li>
       </ul>
+      <Text h2>ES6 & ES7</Text>
 
     </div>
   )

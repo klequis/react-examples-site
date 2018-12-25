@@ -1,7 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/nightOwl'
+import theme from 'prism-react-renderer/themes/vsDarkPlus'
 
 const Code = ({ code, classes }) => (
   <Highlight {...defaultProps} theme={theme} code={code} language="jsx">
