@@ -20,7 +20,7 @@ const Example = (props) => {
   const hasRepo = (hasProp('gitHubUrl', example) && example.gitHubUrl)
   return (
     <div className={classes.wrapper}>
-      <Text h3 color='black' noMargin className={classes.title}>
+      <Text h2 color='black' noMargin className={classes.title}>
         {
           hasPath
             ? <Link to={`${example.path}/${example.id}`} className={classes.routerLink}>{example.title}</Link>

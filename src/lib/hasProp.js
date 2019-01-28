@@ -1,4 +1,5 @@
 import { path } from 'ramda'
+
 /*
     takes a . delimeted path as string
     such as: 'cat.dog.camel'

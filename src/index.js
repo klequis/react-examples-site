@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 const store = configureStore()
 
+
 // Save a reference to the root element for reuse
 const rootEl = document.getElementById('root')
 

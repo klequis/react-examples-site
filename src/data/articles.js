@@ -1,6 +1,9 @@
 /*
     An 'article' can be a componet within this app or an external github repository
     Articles with type='repo' get their id assigned when the app loads
+
+    28Jan19
+    Decide to not worry about articles for now. Will only have the one article for introduction. Will just do type=repo for now
 */
 import Introduction from 'posts/Introduction'
 // import ArrowFunctions from 'posts/ArrowFunctions'
