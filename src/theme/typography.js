@@ -26,7 +26,7 @@ const typography = {
     },
     h2: {
       fontFamily: headingFontFamily,
-      fontSize: '1.55rem',
+      fontSize: '1.2rem',
       lineHeight: 1.375,
       fontWeight: 300,
       textAlign: 'center',
@@ -98,7 +98,7 @@ const typography = {
     },
     h2: {
       fontFamily: headingFontFamily,
-      fontSize: '1.55rem',
+      fontSize: '1.2rem',
       // fontSize: '2.475rem',
       lineHeight: 1.375,
       fontWeight: 300,

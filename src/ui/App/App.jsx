@@ -5,6 +5,7 @@ import Header from 'ui/Header'
 import Footer from 'ui/Footer'
 import Section from 'elements/Section'
 import Examples from 'ui/Examples'
+import Welcome from 'ui/Welcome'
 
 class App extends React.Component {
 
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <div id='App-wrapper' className={classes.wrapper}>
         <Header />
+        <Welcome />
         <Section background='darkGrey' className={classes.section}>
           <div className={classes.main}>
             <Route exact path='/' component={Examples} />

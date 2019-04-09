@@ -23,6 +23,7 @@ const Footer = ({ classes }) => {
       <div className={classes.wrapper}>
         <div className={classes.title}>
           <Text h2 noMargin>Carl Becker</Text>
+          <Text body>(klequis)</Text>
         </div>
         <div className={classes.contact}>
           <img src={iContact} className={classes.contactIcon} alt='contact carl' />
@@ -58,6 +59,7 @@ const styles = theme => ({
   title: {
     flexBasis: '33.3333%',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '1.5rem',

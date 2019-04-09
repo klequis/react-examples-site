@@ -46,7 +46,7 @@ const styles = theme => ({
   tags: {
     display: 'flex',
     alignItems: 'center',
-    marginTop: '1.5rem',
+    marginTop: '0',
   },
   iTag: {
     maxHeight: 20,

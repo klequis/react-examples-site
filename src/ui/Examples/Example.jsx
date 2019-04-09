@@ -5,8 +5,6 @@ import Text from 'elements/Text'
 import A from 'elements/A'
 import { hasProp } from 'lib/hasProp'
 import Tags from './Tags'
-import iArticle from 'icons/article2.svg'
-import iGitHub from 'icons/github-black.svg'
 
 const Example = (props) => {
   const {
@@ -14,17 +12,13 @@ const Example = (props) => {
     example,
   } = props
 
-
   const hasPath = hasProp('path', example)
-  const hasArticle = example.type === 'component'
-  const hasRepo = (hasProp('gitHubUrl', example) && example.gitHubUrl)
   return (
     <div className={classes.wrapper}>
       <Text h2 color='black' noMargin className={classes.title}>
         {
           hasPath
             ? <Link to={`${example.path}/${example.id}`} className={classes.routerLink}>{example.title}</Link>
-
             : <A
                 href={example.gitHubUrl}
                 color='blue'
@@ -34,13 +28,6 @@ const Example = (props) => {
               </A>
         }
       </Text>
-      <div className={classes.dateAndIcons}>
-        {/* <Text caption color='black'>{example.date}</Text>
-        <div>
-          {hasArticle ? <img src={iArticle} className={classes.iArticle} title='Has article' alt='article' /> : null}
-          {hasRepo ? <img src={iGitHub} className={classes.iGitHub} title='Has repo' alt='git hub logo' /> : null}
-        </div> */}
-      </div>
       <Text body color='black'>{example.description}</Text>
       <Tags
         example={example}
